@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#FFFFFF">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        .modal-img {
+        .modal-img, .modal-video {
             width: 100%;
             height: auto;
         }
@@ -47,37 +47,28 @@
     <div class="text-center mt-3">
         <h3 class="mb-4">Check out our recent polishing and ceramic coating work!</h3>
     </div>
-    <div class="d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-start justify-content-between">
         <div class="px-1">
-            <img src="https://placehold.co/400x400/FFFFFF/000000/png" class="img-thumbnail" alt=""
-                 data-bs-toggle="modal"
-                 data-bs-target="#previewModal"
-                 onclick="openModal(0)">
+            <video src="video1.mp4" class="img-thumbnail" alt="" muted onclick="openModal(0, 'video')"
+                   playsinline></video>
         </div>
         <div class="px-1">
-            <img src="https://placehold.co/400x400/FFFF0F/000000/png" class="img-thumbnail" alt=""
-                 data-bs-toggle="modal"
-                 data-bs-target="#previewModal"
-                 onclick="openModal(1)">
+            <video src="video2.mp4" class="img-thumbnail" alt="" muted onclick="openModal(1, 'video')"
+                   playsinline></video>
         </div>
         <div class="px-1">
-            <img src="https://placehold.co/400x400/FFF0FF/000000/png" class="img-thumbnail" alt=""
+            <img src="https://placehold.co/480x640/DC3545/000000/png" class="img-thumbnail" alt=""
                  data-bs-toggle="modal"
                  data-bs-target="#previewModal"
-                 onclick="openModal(2)">
+                 onclick="openModal(2, 'image')">
         </div>
         <div class="px-1">
-            <img src="https://placehold.co/400x400/FF0FFF/000000/png" class="img-thumbnail" alt=""
+            <img src="https://placehold.co/480x640/EC3545/000000/png" class="img-thumbnail" alt=""
                  data-bs-toggle="modal"
                  data-bs-target="#previewModal"
-                 onclick="openModal(3)">
+                 onclick="openModal(3, 'image')">
         </div>
     </div>
-
-    <!--    <div class="my-4">-->
-    <!--        <p>Applying a ceramic coating is one of the best ways to protect your car from the various external factors-->
-    <!--            that can cause it damage. </p>-->
-    <!--    </div>-->
 
     <div class="mt-4 vstack">
         <a href="https://book.mobiledetailsquad.com" class="btn btn-lg w-100 fw-medium btn-danger mb-2">
@@ -117,7 +108,10 @@
                         aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
-                <img src="" id="modalImage" class="modal-img mb-3" alt="Detailing Job">
+                <div id="modalContent">
+                    <img src="" id="modalImage" class="modal-img mb-3" alt="Detailing Job">
+                    <video src="" id="modalVideo" class="modal-video mb-3" controls autoplay></video>
+                </div>
                 <div class="d-flex align-items-center justify-content-center mb-3">
                     <div class="btn-group btn-group-lg" role="group">
                         <button type="button" class="btn btn-light me-1 hstack" onclick="navigate(-1)">
@@ -138,22 +132,41 @@
 
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script>
-    const images = [
-        "https://placehold.co/400x400/FFFFFF/000000/png",
-        "https://placehold.co/400x400/FFFF0F/000000/png",
-        "https://placehold.co/400x400/FFF0FF/000000/png",
-        "https://placehold.co/400x400/FF0FFF/000000/png"
+    const items = [
+        {type: 'video', src: "video1.mp4"},
+        {type: 'video', src: "video2.mp4"},
+        {type: 'image', src: "https://placehold.co/480x640/DC3545/000000/png"},
+        {type: 'image', src: "https://placehold.co/480x640/EC3545/000000/png"},
     ];
     let currentIndex = 0;
 
-    function openModal(index) {
+    function openModal(index, type) {
         currentIndex = index;
-        document.getElementById('modalImage').src = images[currentIndex];
+        updateModalContent();
+        const modal = new bootstrap.Modal(document.getElementById('previewModal'));
+        modal.show();
     }
 
     function navigate(direction) {
-        currentIndex = (currentIndex + direction + images.length) % images.length;
-        document.getElementById('modalImage').src = images[currentIndex];
+        currentIndex = (currentIndex + direction + items.length) % items.length;
+        updateModalContent();
+    }
+
+    function updateModalContent() {
+        const item = items[currentIndex];
+        const modalImage = document.getElementById('modalImage');
+        const modalVideo = document.getElementById('modalVideo');
+
+        if (item.type === 'image') {
+            modalImage.src = item.src;
+            modalImage.style.display = 'block';
+            modalVideo.style.display = 'none';
+        } else if (item.type === 'video') {
+            modalVideo.src = item.src;
+            modalVideo.style.display = 'block';
+            modalImage.style.display = 'none';
+            modalVideo.play();  // Start playing the video when displayed
+        }
     }
 </script>
 </body>
