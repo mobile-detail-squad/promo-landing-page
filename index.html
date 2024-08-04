@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Detail Squad Promotion</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 20px;
+        }
+        header img {
+            max-width: 100px;
+        }
+        .cta {
+            margin: 20px 0;
+        }
+        .cta a {
+            background-color: #ff4b4b;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            max-width: 100px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .overlay img, .overlay video {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="logo.webp" alt="Mobile Detail Squad Inc. Logo">
+</header>
+<div class="cta">
+    <a href="https://book.mobiledetailsquad.com">Book Now</a>
+</div>
+<div class="gallery">
+    <img src="detailing1.jpg" alt="Detailing Job 1">
+    <img src="detailing2.jpg" alt="Detailing Job 2">
+    <img src="detailing3.jpg" alt="Detailing Job 3">
+    <img src="detailing4.jpg" alt="Detailing Job 4">
+</div>
+<div class="overlay" id="overlay">
+    <img id="overlayImage" src="" alt="Overlay Image">
+</div>
+<script>
+    const gallery = document.querySelectorAll('.gallery img');
+    const overlay = document.getElementById('overlay');
+    const overlayImage = document.getElementById('overlayImage');
+
+    gallery.forEach(image => {
+        image.addEventListener('click', () => {
+            overlayImage.src = image.src;
+            overlay.style.display = 'flex';
+        });
+    });
+
+    overlay.addEventListener('click', () => {
+        overlay.style.display = 'none';
+    });
+</script>
+</body>
+</html>
