@@ -9,6 +9,43 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <meta name="theme-color" content="#712cf9">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .thumbnails {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: auto;
+            border: 2px solid #fff;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .thumbnail:nth-child(2) {
+            top: 40px;
+            left: 40px;
+        }
+
+        .thumbnail:nth-child(3) {
+            top: 80px;
+            left: 80px;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+        }
+
+        .modal-img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body class="bg-black text-white">
 <div class="pt-3 pb-4 px-3 bg-white text-center">
@@ -27,16 +64,83 @@
     </div>
 </div>
 <div class="container-sm px-3 py-4" style="max-width: 480px;">
-    <div class="text-center">
+    <div class="text-center border-bottom mb-3 pb-3">
         <p>
-            Mobile Detail Squad is a professional mobile detailing service that comes to you. We offer a variety of
-            services to meet your needs. Our goal is to provide you with the best service possible and make your
-            vehicle
-            look brand new again.
+            Mobile Detail Squad is a professional mobile detailing service that comes to you. Our goal is to provide you
+            with the best service possible and make your
+            vehicle look brand new again.
         </p>
+        <p class="fs-lg fw-semibold mb-0">Get 10% OFF! Use promo code:</p>
+        <div class="badge bg-light text-dark fs-3 my-3">shineup</div>
+        <p class="fs-lg fw-semibold">when booking online!</p>
+    </div>
+    <div class="text-center mt-4">
+        <h2 class="mb-4">Check out our recent polishing and ceramic coating work!</h2>
+    </div>
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="px-1">
+            <img src="https://placehold.co/400x400/FFFFFF/000000/png" class="img-thumbnail" alt=""
+                 data-bs-toggle="modal"
+                 data-bs-target="#previewModal"
+                 onclick="openModal('https://placehold.co/400x400/FFFFFF/000000/png')">
+        </div>
+        <div class="px-1">
+            <img src="https://placehold.co/400x400/FFFFFF/000000/png" class="img-thumbnail" alt=""
+                 data-bs-toggle="modal"
+                 data-bs-target="#previewModal"
+                 onclick="openModal('https://placehold.co/400x400/FFFFFF/000000/png')">
+        </div>
+        <div class="px-1">
+            <img src="https://placehold.co/400x400/FFFFFF/000000/png" class="img-thumbnail" alt=""
+                 data-bs-toggle="modal"
+                 data-bs-target="#previewModal"
+                 onclick="openModal('https://placehold.co/400x400/FFFFFF/000000/png')">
+        </div>
+        <div class="px-1">
+            <img src="https://placehold.co/400x400/FFFFFF/000000/png" class="img-thumbnail" alt=""
+                 data-bs-toggle="modal"
+                 data-bs-target="#previewModal"
+                 onclick="openModal('https://placehold.co/400x400/FFFFFF/000000/png')">
+        </div>
     </div>
 
+
+    <div class="mt-5 vstack">
+        <a href="https://book.mobiledetailsquad.com" class="btn btn-lg w-100 btn-danger mb-2">
+            <i class="ph ph-calendar-dots position-relative me-2" style="top: 1px"></i>Book Now
+        </a>
+    </div>
+
+    <div class="text-center">
+        <p class="mt-4">
+            <small>&copy; 2024 Mobile Detail Squad Inc.</small>
+        </p>
+    </div>
 </div>
-<script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+<!-- Modal -->
+<div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-black">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="" id="modalImage" class="modal-img mb-4" alt="Detailing Job">
+                <a href="https://book.mobiledetailsquad.com" class="btn btn-lg w-100 btn-danger mb-2">
+                    <i class="ph ph-calendar-dots position-relative me-2" style="top: 1px"></i>Book Now
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script>
+    function openModal(imageSrc) {
+        document.getElementById('modalImage').src = imageSrc;
+    }
+</script>
 </body>
 </html>
