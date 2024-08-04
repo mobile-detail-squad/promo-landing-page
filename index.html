@@ -1,96 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Detail Squad Promotion</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            padding: 20px;
-        }
-        header img {
-            max-width: 100px;
-        }
-        .cta {
-            margin: 20px 0;
-        }
-        .cta a {
-            background-color: #ff4b4b;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 20px;
-            border-radius: 5px;
-        }
-        .gallery {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .gallery img {
-            max-width: 100px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .overlay img, .overlay video {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 5px;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Mobile Detail Squad</title>
+    <link rel="canonical" href="https://promo.mobiledetailsquad.com/">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <meta name="theme-color" content="#712cf9">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
-<body>
-<header>
-    <img src="logo.webp" alt="Mobile Detail Squad Inc. Logo">
-</header>
-<div class="cta">
-    <a href="https://book.mobiledetailsquad.com">Book Now</a>
+<body class="bg-black text-white">
+<div class="pt-3 pb-4 px-3 bg-white text-center">
+    <div class="mx-auto" style="max-width: 480px;">
+        <div class="py-3">
+            <img src="logo.webp" class="img-fluid" alt="Mobile Detail Squad" style="max-width: 180px;">
+        </div>
+        <div class="vstack">
+            <a href="https://book.mobiledetailsquad.com" class="btn btn-lg w-100 btn-danger mb-2">
+                <i class="ph ph-calendar-dots position-relative me-2" style="top: 1px"></i>Book Now
+            </a>
+            <a href="tel:15878872081" class="btn w-100 btn-outline-danger">
+                <i class="ph ph-phone position-relative me-2" style="top: 1px"></i>Call Us
+            </a>
+        </div>
+    </div>
 </div>
-<div class="gallery">
-    <img src="detailing1.jpg" alt="Detailing Job 1">
-    <img src="detailing2.jpg" alt="Detailing Job 2">
-    <img src="detailing3.jpg" alt="Detailing Job 3">
-    <img src="detailing4.jpg" alt="Detailing Job 4">
-</div>
-<div class="overlay" id="overlay">
-    <img id="overlayImage" src="" alt="Overlay Image">
-</div>
-<script>
-    const gallery = document.querySelectorAll('.gallery img');
-    const overlay = document.getElementById('overlay');
-    const overlayImage = document.getElementById('overlayImage');
+<div class="container-sm px-3 py-4" style="max-width: 480px;">
+    <div class="text-center">
+        <p>
+            Mobile Detail Squad is a professional mobile detailing service that comes to you. We offer a variety of
+            services to meet your needs. Our goal is to provide you with the best service possible and make your
+            vehicle
+            look brand new again.
+        </p>
+    </div>
 
-    gallery.forEach(image => {
-        image.addEventListener('click', () => {
-            overlayImage.src = image.src;
-            overlay.style.display = 'flex';
-        });
-    });
-
-    overlay.addEventListener('click', () => {
-        overlay.style.display = 'none';
-    });
-</script>
+</div>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
