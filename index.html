@@ -10,6 +10,14 @@
     <meta name="theme-color" content="#FFFFFF">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
+        .img-thumbnail {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
         .modal-img, .modal-video {
             width: 100%;
             height: auto;
@@ -17,55 +25,118 @@
     </style>
 </head>
 <body class="bg-black text-white">
-<div class="pt-3 pb-3 px-3 bg-white text-center">
+<div class="py-2 px-3 bg-white text-center">
     <div class="mx-auto" style="max-width: 480px;">
-        <div class="pt-1 pb-3">
+        <div class="py-1">
             <img src="logo.webp" class="img-fluid" alt="Mobile Detail Squad" style="max-width: 180px;">
         </div>
-        <div class="vstack">
-            <a href="https://book.mobiledetailsquad.com" class="btn btn-lg w-100 fw-medium btn-danger mb-2">
-                <i class="ph ph-calendar-dots position-relative me-2" style="top: 1px"></i>Book Now
-            </a>
-            <a href="tel:15878872081" class="btn w-100 btn-outline-danger fw-medium">
-                <i class="ph ph-phone position-relative me-2" style="top: 1px"></i>Call Us
+        <p class="mb-3 text-dark fw-semibold">
+            Get 10% off! Use promo code <span class="badge bg-dark bg-gradient text-light fs-6 p-2">shineup</span> when
+            booking online!
+        </p>
+        <div class="hstack gap-2 mb-2">
+            <a href="https://book.mobiledetailsquad.com"
+               class="btn btn-lg bg-gradient w-100 fw-semibold btn-danger hstack gap-1 justify-content-center">
+                <i class="ph ph-calendar-dots position-relative" style="top: 1px"></i><span>Book Now</span>
             </a>
         </div>
     </div>
 </div>
-<div class="container-sm px-3 py-3" style="max-width: 480px;">
-    <div class="text-center border-bottom mb-4 pb-4">
-        <p class="mb-4">
-            Our detailers provide insured pick-up, detail your car at our shop, and then securely drop it back at your
-            location. Our goal is to provide you
-            with the best service possible and make your
-            vehicle look brand new again.
-        </p>
-        <p class="fs-lg fw-semibold mb-0">Get 10% OFF! Use promo code:</p>
-        <div class="badge bg-light text-dark fs-3 my-3">shineup</div>
-        <p class="fs-lg fw-semibold mb-0">when booking online!</p>
+<div class="container-sm p-3" style="max-width: 480px;">
+    <div class="text-center mb-4">
+        <h4>🚗 Welcome Back, Auto Detailing Enthusiasts! 🚗</h4>
+        <p class="small">You’ve already seen the incredible transformations we’ve done with polishing, paint correction,
+            and ceramic
+            coating—now, here’s why your vehicle deserves the same top-tier treatment. 👇</p>
     </div>
-    <div class="text-center mt-3">
-        <h3 class="mb-4">Check out our recent polishing and ceramic coating work!</h3>
-    </div>
-    <div class="d-flex align-items-start justify-content-between">
-        <div class="px-1">
+    <h4 class="text-center mb-3">Check out our recent polishing and ceramic coating work!</h4>
+    <div class="d-flex align-items-start justify-content-between flex-wrap mb-4">
+        <div class="w-25 px-1 pb-1">
             <video src="video1.mp4" class="img-thumbnail" muted onclick="openModal(0, 'video')"
                    poster="video1.png"></video>
         </div>
-        <div class="px-1">
+        <div class="w-25 px-1 pb-1">
             <video src="video2.mp4" class="img-thumbnail" muted onclick="openModal(1, 'video')"
                    poster="video2.png"></video>
         </div>
-        <div class="px-1">
+        <div class="w-25 px-1 pb-1">
             <video src="video3.mp4" class="img-thumbnail" muted onclick="openModal(2, 'video')"
                    poster="video3.png"></video>
         </div>
+        <div class="w-25 px-1 pb-1">
+            <video src="video4.mp4" class="img-thumbnail" muted onclick="openModal(3, 'video')"
+                   poster="video4.png"></video>
+        </div>
+    </div>
+    <div>
+        <h4>What is Polishing & Paint Correction? 🛠️</h4>
+        <p class="small">Polishing and paint correction go far beyond your basic car wash. While a regular wash removes
+            surface dirt, it doesn’t touch those deeper imperfections like:</p>
+        <ul class="small">
+            <li>Swirl marks</li>
+            <li>Light scratches</li>
+            <li>Oxidation</li>
+            <li>Water spots</li>
+        </ul>
+        <p class="small">
+            With paint correction, we restore your vehicle’s paint to a flawless, like-new condition by carefully
+            buffing out imperfections. The result? A mirror-like gloss that makes your car look better than ever! It’s
+            the ultimate TLC for car lovers who want their ride looking fresh, vibrant, and showroom-ready. ✨
+        </p>
+        <h4 class="mt-4">Why Should You Get It? 🚗💎</h4>
+        <p class="small">Living in Calgary and Red Deer means battling tough conditions—dust, road debris, UV rays, and
+            unpredictable
+            weather. Over time, this damages your vehicle’s exterior. Paint correction not only revives your car's
+            appearance, but it also protects your investment by prolonging the life of your paint.</p>
+        <p class="small">Imagine turning heads with that fresh-from-the-dealership shine—every time you drive! 🌟 That’s
+            what a professional polish can do.</p>
+
+
+        <h4 class="mt-4">Ceramic Coating: The Ultimate Shield 🛡️</h4>
+        <p class="small">Ceramic coating is next-level protection for your vehicle. While traditional waxes and sealants
+            wear off after
+            just a few washes, ceramic coatings create a durable bond with your car's paint. This invisible,
+            long-lasting
+            shield:</p>
+
+        <ul class="small">
+            <li>Repels water and dirt with ease 💧</li>
+            <li>Guards against UV rays and environmental contaminants ☀️</li>
+            <li>Locks in a glossy shine that lasts for years 🎉</li>
+            <li>Whether you’re dealing with Alberta’s intense summer sun or harsh winter roads, ceramic coating is the
+                perfect defense against the elements. 🌨️
+            </li>
+        </ul>
+
+        <h4 class="mt-4">Calgary’s Water Restrictions? No Problem! 💧</h4>
+        <p class="small">Did you know Calgary's water restrictions make frequent car washes more difficult? With a
+            ceramic coating, your
+            vehicle stays cleaner for longer, and when it’s time to wash, it’s quicker and easier—using far less water.
+            So,
+            you’re not just protecting your car, you’re helping the environment too! 🌍♻️</p>
+
+        <h4 class="mt-4">Why Act Now? ⏳</h4>
+        <p class="small">Every day you wait, those imperfections settle deeper into your vehicle’s paint. Getting your
+            vehicle polished and ceramic coated now means locking in that flawless look and protecting your car for
+            years to come. Plus, it helps maintain your car’s value! 💼</p>
+
+        <h4 class="mt-4">Book Your Appointment Today!</h4>
+        <p class="small">Ready to give your vehicle the care it deserves? Click below to schedule your exterior polish,
+            paint correction, or ceramic coating service today and enjoy a ride that always shines. 🚗✨</p>
     </div>
 
-    <div class="mt-4 vstack">
-        <a href="https://book.mobiledetailsquad.com" class="btn btn-lg w-100 fw-medium btn-danger mb-2">
-            <i class="ph ph-calendar-dots position-relative me-2" style="top: 1px"></i>Book Now
-        </a>
+
+    <div class="my-4">
+        <div class="hstack gap-2">
+            <a href="https://book.mobiledetailsquad.com"
+               class="btn bg-gradient w-100 fw-semibold btn-danger hstack gap-1 justify-content-center py-2">
+                <i class="ph ph-calendar-dots"></i><span>Book Now</span>
+            </a>
+            <a href="tel:15878872081"
+               class="btn w-100 btn-outline-light fw-semibold hstack gap-1 justify-content-center py-2">
+                <i class="ph ph-phone ph-fill"></i><span>Call Us</span>
+            </a>
+        </div>
     </div>
 
     <div class="text-center">
@@ -114,8 +185,9 @@
                         </button>
                     </div>
                 </div>
-                <a href="https://book.mobiledetailsquad.com" class="btn btn-lg w-100 fw-medium btn-danger mb-2">
-                    <i class="ph ph-calendar-dots position-relative me-2" style="top: 1px"></i>Book Now
+                <a href="https://book.mobiledetailsquad.com"
+                   class="btn btn-lg w-100 fw-medium btn-danger mb-2 hstack gap-1 justify-content-center">
+                    <i class="ph ph-calendar-dots position-relative" style="top: 1px"></i><span>Book Now</span>
                 </a>
             </div>
         </div>
@@ -125,9 +197,10 @@
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script>
     const items = [
-        {type: 'video', src: "video1.mp4"},
-        {type: 'video', src: "video2.mp4"},
-        {type: 'video', src: "video3.mp4"},
+        {type: 'video', src: 'video1.mp4'},
+        {type: 'video', src: 'video2.mp4'},
+        {type: 'video', src: 'video3.mp4'},
+        {type: 'video', src: 'video4.mp4'},
     ];
     let currentIndex = 0;
 
@@ -156,7 +229,7 @@
             modalVideo.src = item.src;
             modalVideo.style.display = 'block';
             modalImage.style.display = 'none';
-            modalVideo.play();  // Start playing the video when displayed
+            modalVideo.play();
         }
     }
 </script>
