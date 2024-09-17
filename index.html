@@ -243,6 +243,12 @@
             modalVideo.play();
         }
     }
+
+    document.getElementById('previewModal').addEventListener('hidden.bs.modal', function () {
+        const modalVideo = document.getElementById('modalVideo');
+        modalVideo.pause();
+        modalVideo.src = '';
+    });
 </script>
 </body>
 </html>
